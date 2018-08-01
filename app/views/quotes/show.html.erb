@@ -1,0 +1,12 @@
+<h2>"<%= @quote.text %>"</h2>
+<p>- <%= @quote.author %></p>
+<hr>
+<%= link_to "Edit", edit_quote_path(@quote), :class => 'btn btn-success' %>
+<%= link_to "Delete", quote_path(@quote),
+			method: :delete,
+			data: {confirm: 'If you confirm, the quote will be deleted irreversibly: '}, 
+			:class => 'btn btn-danger' %>
+<hr>
+
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>

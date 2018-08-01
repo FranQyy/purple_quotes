@@ -1,0 +1,8 @@
+<h4>Comments</h4>
+<% @quote.comments.each do |comment| %>
+	<div class="card card-body bg-light">
+			<p><%= comment.username %>: <%= comment.text %></p>
+	</div>
+	<br>
+<% end %>
+<br>

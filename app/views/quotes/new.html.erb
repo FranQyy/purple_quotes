@@ -1,0 +1,22 @@
+<h1>Add Quote</h1>
+
+<%= form_with scope: :quote, url: quotes_path, local: true do |form| %>
+	<% if @quote.errors.any? %>
+		<% @quote.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area(:text, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= form.label :author %><br>
+    <%= form.text_field(:author, {:class => 'form-control' }) %>
+  </p>
+ 
+  <p>
+    <%= form.submit({:class => 'btn btn-success'}) %>
+  </p>
+<% end %>

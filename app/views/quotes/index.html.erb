@@ -1,0 +1,15 @@
+<h1>Welcome at <span style="color: #85027E"><b>Purple</b></span> Quotes!</h1>
+
+<% if @quotes.count === 0 %>
+If you want to add a Quote, click 'Add Quote' above.
+<% end %>
+
+<% @quotes.each do |quote| %>
+
+	<div class="card card-body bg-light">
+		<h3>"<%= quote.text %>"</h3>
+		<p>- <%= quote.author %></p>
+		<%= link_to "Read More", quote_path(quote), :class => 'btn btn-success', :style => 'width: 120px' %>
+	</div>
+	<br>
+<% end %>
